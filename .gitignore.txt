@@ -74,6 +74,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 
-/[Ll]Library/Library/PackageCache
-Library/PackageCache
-/[Ll]Library/PackageCache
+/[Ll]Library/Library/PackageCache/com.unity.visualscripting
+Library/PackageCache/com.unity.visualscripting
+/[Ll]Library/PackageCache/com.unity.visualscripting
