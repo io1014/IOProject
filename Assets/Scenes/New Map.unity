@@ -2270,7 +2270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &612219393
 Transform:
   m_ObjectHideFlags: 0
@@ -2280,7 +2280,7 @@ Transform:
   m_GameObject: {fileID: 612219392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1258781105}
@@ -2301,11 +2301,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   stats:
-  - speed: 1
+  - speed: 2
     damage: 5
-    range: 0
+    range: 5
     timeToAttack: 0
-    amount: 0
+    amount: 1
     duration: 2
     upgradetext: Upgrade Speed +20%
   - speed: 1.2
@@ -9208,7 +9208,7 @@ Transform:
   m_GameObject: {fileID: 1258781104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.25, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1033265071}

@@ -18,7 +18,6 @@ public class Weapon : MonoBehaviour
     }
     public virtual void DoLevelUp()
     {
-
     }
 }
 [Serializable]
