@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Monster
+  - Weapon
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -40,4 +43,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 1405885311
+    locked: 0
+  - name: Monster
+    uniqueID: 3718414049
+    locked: 0
+  - name: EXP
+    uniqueID: 2766924533
+    locked: 0
+  - name: Player
+    uniqueID: 1586737349
     locked: 0
