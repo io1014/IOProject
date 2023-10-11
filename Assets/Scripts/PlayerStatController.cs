@@ -7,7 +7,7 @@ public class PlayerStatController : MonoBehaviour
 {
     public static PlayerStatController instance;
     public List<PlayerStatValue> moveSpeed, health, pickupRange, maxWeapons;
-    public int moveSpeedLevelCount, healthLevelCount, pickupRangeLevelCount;
+    public int moveSpeedLevelCount, healthLevelCount, pickupRangeLevelCount, maxWeaponsLevelCount;
     public int moveSpeedLevel, healthLevel, pickupRangeLevel, maxWeaponsLevel;
 
 
@@ -22,22 +22,24 @@ public class PlayerStatController : MonoBehaviour
         {
             health.Add(new PlayerStatValue(health[i].cost + health[1].cost, health[i].value + (health[1].value - health[0].value)));
         }
-
-
+        for (int i = pickupRange.Count -1; i < pickupRangeLevel; i++)
+        {
+            pickupRange.Add(new PlayerStatValue(pickupRange[i].cost + pickupRange[1].cost, pickupRange[i].value + (pickupRange[1].value - pickupRange[0].value)));
+        }
+        for (int i = maxWeapons.Count - 1; i < maxWeaponsLevel; i++ )
+        {
+            maxWeapons.Add(new PlayerStatValue(maxWeapons[i].cost + maxWeapons[1].cost, maxWeapons[i].value + (maxWeapons[1].value - maxWeapons[0].value)));
+        }
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (UIController.Instance.LevelUpPanel.activeSelf == true)
         {
             UpdateDisplay();
         }
-
     }
     public void UpdateDisplay()
     {
-
 
     }
 
@@ -65,7 +67,6 @@ public class PlayerStatController : MonoBehaviour
     public void PurchasemaxWeapons()
     {
         UpdateDisplay();
-
     }
 }
 [Serializable]

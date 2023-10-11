@@ -5,19 +5,22 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
+    [SerializeField] List<Weapon> unassignedWeapon, assignedWeapon;
+    int maxWeapon = 3;
 
     private void Awake()
     {
         instance = this;
     }
-
-
-    public float speed = 3;
-    public float range = 2f;
+    public float speed;
+    public float range;
 
     public Weapon weapon;
     void Start()
     {
+        speed = PlayerStatController.instance.moveSpeed[0].value;
+        range = PlayerStatController.instance.pickupRange[0].value;
+
         
     }
 

@@ -6,46 +6,32 @@ using UnityEngine.UI;
 public class PlayerHealthController : MonoBehaviour
 {
     public static PlayerHealthController Instance;
-    public float currenthealth, maxhealth = 100;
+    public float maxhealth , currenthealth;
     [SerializeField]
     Slider healthSlider;
-   
-    //public List<PlayerStatValue> moveSpeed, health, pickupRange, maxWeapons;
-    //public int moveSpeedLevelCount, healthLevelCount, pickupRangeLevelCount;
-
-    //public int moveSpeedLevel, healthLevel, pickupRangeLevel, maxWeaponsLevel;
-
-
     private void Awake()
     {
         Instance = this;
     }
     void Start()
     {
+        maxhealth = PlayerStatController.instance.health[0].value;
         currenthealth = maxhealth;
         healthSlider.maxValue = maxhealth;
         healthSlider.value= currenthealth;
 
     }
-
-    // Update is called once per frame
     void Update()
     {
         healthSlider.maxValue = maxhealth;
         healthSlider.value = currenthealth;
-
-
-
     }
-
     public void UpdateBtn()
     {
         if (UIController.Instance.LevelUpPanel.activeSelf == true)
         {
-
         }
     }
-
     public void TakeDamage(float damage)
     {
         currenthealth -= damage;

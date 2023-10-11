@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MosnterMove : MonoBehaviour
 {
@@ -17,21 +14,16 @@ public class MosnterMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Target = FindObjectOfType<PlayerController>().transform;
-        
+        Target = FindObjectOfType<PlayerController>().transform; 
     }
-
-    // Update is called once per frame
     void Update()
     {
         rb.velocity = (Target.position - transform.position).normalized * speed;
-        
         if(hitCounter > 0)
         {
             hitCounter -= Time.deltaTime;
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
        if(collision.collider.CompareTag("Player") &&  hitCounter <= 0)
@@ -44,7 +36,6 @@ public class MosnterMove : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-
         if(health <=0)
         {
             Destroy(gameObject);

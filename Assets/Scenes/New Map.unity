@@ -527,6 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4c7ec1c63e944449b962b6266bcadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: -1061488230, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   stats:
   - speed: 1
     damage: 3
@@ -558,7 +559,6 @@ MonoBehaviour:
     upgradetext: 
   weaponLevel: 1
   statsUpdate: 1
-  icon: {fileID: -1061488230, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   damage: {fileID: 746608008}
 --- !u!1 &169480420
 GameObject:
@@ -2270,7 +2270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &612219393
 Transform:
   m_ObjectHideFlags: 0
@@ -2299,6 +2299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3dd324d2a377e479f4c09c013c6599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   stats:
   - speed: 1
     damage: 5
@@ -2306,8 +2307,8 @@ MonoBehaviour:
     timeToAttack: 0
     amount: 0
     duration: 2
-    upgradetext: Upgrade speed
-  - speed: 2
+    upgradetext: Upgrade Speed +20%
+  - speed: 1.2
     damage: 5
     range: 0
     timeToAttack: 0
@@ -2330,7 +2331,6 @@ MonoBehaviour:
     upgradetext: 4
   weaponLevel: 0
   statsUpdate: 0
-  icon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
 --- !u!1 &629928819
 GameObject:
   m_ObjectHideFlags: 0
@@ -8419,7 +8419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1116882111
 Transform:
   m_ObjectHideFlags: 0
@@ -8448,6 +8448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59fcd20eb90a4414b9e88004b76ecf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: -1283994490, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   stats:
   - speed: 3
     damage: 3
@@ -8458,7 +8459,6 @@ MonoBehaviour:
     upgradetext: 
   weaponLevel: 0
   statsUpdate: 0
-  icon: {fileID: -1283994490, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
 --- !u!1 &1134244241
 GameObject:
   m_ObjectHideFlags: 0
@@ -38846,24 +38846,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed:
-  - cost: 0
-    value: 2
-  - cost: 5
-    value: 2.1
-  health:
-  - cost: 0
-    value: 100
-  - cost: 10
-    value: 105
-  pickupRange:
-  - cost: 0
+  - cost: 1
+    value: 5
+  - cost: 1
     value: 1
-  - cost: 50
-    value: 1.2
-  maxWeapons: []
-  moveSpeedLevelCount: 50
-  healthLevelCount: 50
-  pickupRangeLevelCount: 50
+  - cost: 1
+    value: 1
+  health:
+  - cost: 1
+    value: 1000
+  - cost: 1
+    value: 1
+  - cost: 1
+    value: 1
+  pickupRange:
+  - cost: 1
+    value: 1
+  - cost: 1
+    value: 1
+  - cost: 1
+    value: 1
+  maxWeapons:
+  - cost: 1
+    value: 1
+  - cost: 1
+    value: 1
+  - cost: 1
+    value: 1
+  moveSpeedLevelCount: 10
+  healthLevelCount: 10
+  pickupRangeLevelCount: 10
+  maxWeaponsLevelCount: 0
   moveSpeedLevel: 0
   healthLevel: 0
   pickupRangeLevel: 0
@@ -39157,6 +39170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b515bd62bef4bc34b9c82da4d2f6a7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unassignedWeapon:
+  - {fileID: 612219394}
+  - {fileID: 1116882112}
+  - {fileID: 167341060}
+  assignedWeapon: []
   speed: 3
   range: 2
   weapon: {fileID: 612219394}
@@ -39278,8 +39296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cac1c60bb5ec647b3f28bb3cc6d5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currenthealth: 0.72
   maxhealth: 100
+  currenthealth: 0.72
   healthSlider: {fileID: 886345319}
 --- !u!1 &2080168558
 GameObject:

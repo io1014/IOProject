@@ -1,20 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] public Sprite icon;
     public List<WeaponStats> stats;
     public int weaponLevel;
-
     public bool statsUpdate;
-
-    [SerializeField] public Sprite icon;
-   
     public void LevelUp()
     {
-        if(weaponLevel < stats.Count -1)
+        if (weaponLevel < stats.Count - 1)
         {
             weaponLevel++;
             statsUpdate = true;
@@ -27,9 +22,8 @@ public class Weapon : MonoBehaviour
     }
 }
 [Serializable]
-
 public class WeaponStats
 {
     public float speed, damage, range, timeToAttack, amount, duration;
-    public string upgradetext; 
+    public string upgradetext;
 }
