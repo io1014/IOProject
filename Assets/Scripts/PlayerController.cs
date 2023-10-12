@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
-    [SerializeField] List<Weapon> unassignedWeapon, assignedWeapon;
+    [SerializeField]public List<Weapon> unassignedWeapon, assignedWeapon;
     int maxWeapon = 3;
 
     private void Awake()
