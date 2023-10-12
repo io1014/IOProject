@@ -77,3 +77,5 @@ crashlytics-build.properties
 /[Ll]Library/Library/PackageCache/com.unity.visualscripting
 Library/PackageCache/com.unity.visualscripting
 /[Ll]Library/PackageCache/com.unity.visualscripting
+/Assets/GUI_Parts
+/Assets/Miniature Army 2D V.1
