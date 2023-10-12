@@ -42,7 +42,4 @@ public class PlayerHealthController : MonoBehaviour
         }
         healthSlider.value = currenthealth;
     }
-
-  
-
 }

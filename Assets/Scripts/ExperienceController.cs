@@ -23,6 +23,7 @@ public class ExperienceController : MonoBehaviour
         currentexperience += Exp;
         if (currentexperience >= expLevels[currentLevel])
         {
+            currentexperience = 0;
             LevelUp();
         }
         UIController.Instance.UpdateExperience(currentexperience, expLevels[currentLevel], currentLevel);
