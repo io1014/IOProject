@@ -22,5 +22,9 @@ public class BackGroundColor : MonoBehaviour
         { 
             image.color = gradient.Evaluate(t); 
         }
+        if (Time.timeScale ==1)
+        {
+            image.color = Color.black;
+        }
     }
 }

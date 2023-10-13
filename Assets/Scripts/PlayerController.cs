@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     [SerializeField]public List<Weapon> unassignedWeapon, assignedWeapon;
     int maxWeapon = 3;
+    public Vector3 inputvec;
 
     private void Awake()
     {
@@ -23,12 +24,17 @@ public class PlayerController : MonoBehaviour
 
         
     }
-
-    private void FixedUpdate()
+    private void Update()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        transform.Translate(new Vector3(x, y, 0).normalized * speed * Time.deltaTime);
+        inputvec.x = x;
+        inputvec.y = y;
+    }
+
+    private void FixedUpdate()
+    {
+        transform.Translate(new Vector3(inputvec.x, inputvec.y, 0).normalized * speed * Time.deltaTime);
     }
 
     public float Setrange { get { return range; } }
