@@ -14,6 +14,12 @@ public class Weapon : MonoBehaviour
             weaponLevel++;
             statsUpdate = true;
             DoLevelUp();
+
+            if (weaponLevel >= stats.Count - 1)
+            {
+                PlayerController.instance.MaxLevel.Add(this);
+                PlayerController.instance.assignedWeapon.Remove(this);
+            }
         }
     }
     public virtual void DoLevelUp()

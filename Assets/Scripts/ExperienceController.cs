@@ -7,6 +7,7 @@ public class ExperienceController : MonoBehaviour
     int currentexperience;
     public List<int> expLevels;
     int currentLevel = 1, maxLevel = 20;
+    public List<Weapon> weaponsList;
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -23,7 +24,6 @@ public class ExperienceController : MonoBehaviour
         currentexperience += Exp;
         if (currentexperience >= expLevels[currentLevel])
         {
-            currentexperience = 0;
             LevelUp();
         }
         UIController.Instance.UpdateExperience(currentexperience, expLevels[currentLevel], currentLevel);
@@ -42,6 +42,45 @@ public class ExperienceController : MonoBehaviour
         }
         UIController.Instance.LevelUpPanel.SetActive(true);
         Time.timeScale = 0f;
-        UIController.Instance.levelupButtons[0].UpdateButton(PlayerController.instance.weapon);
+
+        weaponsList.Clear();
+        List<Weapon> weapons = new List<Weapon>();
+        weapons.AddRange(PlayerController.instance.assignedWeapon); //할당된 무기 리스트에 저장
+        if (weapons.Count > 0)
+        {
+            int select = Random.Range(0, weapons.Count);
+            weaponsList.Add(weapons[select]);
+            weapons.RemoveAt(select);
+        }
+        if (PlayerController.instance.assignedWeapon.Count +PlayerController.instance.MaxLevel.Count < PlayerController.instance.maxWeapon)
+        {
+            weapons.AddRange(PlayerController.instance.unassignedWeapon);
+        }
+
+        for (int i = weaponsList.Count; i < 3; i++)
+        {
+            if(weapons.Count >0)
+            {
+                int select = Random.Range(0, weapons.Count);
+                weaponsList.Add(weapons[select]);
+                weapons.RemoveAt(select);
+            }
+        }
+        for(int i = 0; i < weaponsList.Count; i++)
+        {
+            UIController.Instance.levelupButtons[i].UpdateButton(weaponsList[i]);
+        }
+        for (int i =0; i <UIController.Instance.levelupButtons.Length; i++)
+        {
+            if(i < weaponsList.Count)
+            {
+                UIController.Instance.levelupButtons[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                UIController.Instance.levelupButtons[i].gameObject.SetActive(false);
+            }
+        }
     }
+
 }

@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BackGroundColor : MonoBehaviour
 {
+    [SerializeField]public Slider slider;
     public Gradient gradient;
     float t =1; 
     Image image;
     private void Start()
     {
+        slider = GetComponent<Slider>();
         image = transform.GetComponent<Image>();
     }
     void Update()
@@ -20,7 +20,7 @@ public class BackGroundColor : MonoBehaviour
 
         if (Time.timeScale == 0)
         { 
-            image.color = gradient.Evaluate(t); 
+            image.color = gradient.Evaluate(t);
         }
         if (Time.timeScale ==1)
         {

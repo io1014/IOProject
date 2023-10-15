@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2627687812376753440}
   - component: {fileID: 610838825913678019}
   - component: {fileID: -6671206965090760364}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Monster1
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -137,3 +137,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exp: 5
+  coin: 10
+  Droprate: 0.5

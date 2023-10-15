@@ -19,14 +19,18 @@ public class LevelUpButton : MonoBehaviour
             upgradeText.text = "Unlock " + theweapon.name;
             weaponIcon.sprite = theweapon.icon;
             nameLevelText.text = theweapon.name;
-
         }
+        weapon = theweapon;
     }
     public void SelectUpgrade()
     {
         if (weapon != null)
         {
-            weapon.LevelUp();
+            if (weapon.gameObject.activeSelf == true) weapon.LevelUp();
+            else
+            {
+                PlayerController.instance.AddWeapon(weapon);
+            }
             UIController.Instance.LevelUpPanel.SetActive(false);
             Time.timeScale = 1f;
         }

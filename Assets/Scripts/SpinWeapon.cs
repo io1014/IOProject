@@ -11,7 +11,7 @@ public class SpinWeapon : Weapon
     void Update()
     {
         transform.rotation = Quaternion.Euler(0f, 0f, transform.rotation.eulerAngles.z + (_rotateSpeed * Time.deltaTime * stats[weaponLevel].speed));
-
+  
         if (statsUpdate == true)
         {
             statsUpdate = false;

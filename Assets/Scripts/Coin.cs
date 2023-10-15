@@ -1,7 +1,7 @@
 using UnityEngine;
 public class Coin : MonoBehaviour
 {
-    public int coinAmount = 1;
+    public int coinAmount = 10;
     bool movingToPlayer;
     public float moveSpeed;
     float timeCheck = 0.2f;

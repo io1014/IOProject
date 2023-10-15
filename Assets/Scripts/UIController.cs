@@ -26,4 +26,8 @@ public class UIController : MonoBehaviour
         expslider.value = currentExp;
         expLevel.text = "Level :" + currentlevel;
     }
+    public void exitLevel()
+    {
+        LevelUpPanel.SetActive(false);
+    }
 }

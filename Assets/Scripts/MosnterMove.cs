@@ -10,7 +10,8 @@ public class MosnterMove : MonoBehaviour
     float hitCounter;
     float health = 10;
     [SerializeField] int exp;
-    [SerializeField] int coin;
+    [SerializeField] int coin = 10;
+    [SerializeField] float Droprate = 0.5f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,7 +41,11 @@ public class MosnterMove : MonoBehaviour
         {
             Destroy(gameObject);
             ExperienceController.instance.SpawnExp(transform.position, exp);
-            CoinController.instance.SpawnCoin(transform.position,coin);
+           
+            if(Random.value <= Droprate) 
+            {
+                CoinController.instance.SpawnCoin(transform.position, coin);
+            }
         }
         DamageNumberControll._instance.SpawnDamage(damage, transform.position);
 
