@@ -46,22 +46,15 @@ public class KnifeTrhow : Weapon
             }
         }
     }
-
     public override void DoLevelUp()
     {
         SetStats();
     }
-
     public void SetStats()
     {
         damage.damageamout = stats[weaponLevel].damage;
         damage.lifeTime = stats[weaponLevel].duration;
-
         damage.transform.localScale = Vector3.one * stats[weaponLevel].range;
-
         shotCounter = 0f;
-
-        //projectile.moveSpeed = stats[weaponLevel].speed;
-
     }
 }

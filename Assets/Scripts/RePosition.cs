@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class RePosition : MonoBehaviour
 {
+    Collider2D coll;
+
+    private void Awake()
+    {
+        coll = GetComponent<Collider2D>();
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Area"))
@@ -12,20 +18,15 @@ public class RePosition : MonoBehaviour
         Vector3 myPos = transform.position;
         //float diffX = Mathf.Abs(playerPos.x - myPos.x);
         //float diffY = Mathf.Abs(playerPos.y - myPos.y);
-
-        //Vector3 playerDir = GameManager.instance.player.inputvec;
+        Vector3 playerDir = GameManager.instance.player.inputvec;
         //float dirX = playerDir.x < 0 ? -1 : 1;
         //float dirY = playerDir.y < 0 ? -1 : 1;
         float dirX = playerPos.x - myPos.x;
         float dirY = playerPos.y - myPos.y;
-
         float diffX = Mathf.Abs(dirX);
         float diffY = Mathf.Abs(dirY);
-
         dirX = dirX > 0 ? 1 : -1;
         dirY = dirY > 0 ? 1 : -1;
-
-
         switch(transform.tag)
         {
             case "Ground":
@@ -51,8 +52,11 @@ public class RePosition : MonoBehaviour
                 //    transform.Translate(Vector3.up * dirY * 40);
                 //}
                 break;
-            case "Enemy":
-
+            case "Monster":
+                if(coll.enabled)
+                {
+                    transform.Translate(playerDir * 40 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                }
                 break;
         }
     }

@@ -2464,7 +2464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &612219393
 Transform:
   m_ObjectHideFlags: 0
@@ -2526,9 +2526,6 @@ MonoBehaviour:
     upgradetext: 4
   weaponLevel: 0
   statsUpdate: 0
-  fireball: {fileID: 1258781105}
-  holder: {fileID: 123203182}
-  timeBetweenSpawn: 0
 --- !u!1 &629928819
 GameObject:
   m_ObjectHideFlags: 0
@@ -7297,7 +7294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa55c7686d1ae94d964af91b2fb00ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   lifeTime: 5
+  destroyParent: 0
+  damageOverTime: 0
+  timeBetweenDamage: 0
 --- !u!212 &746608010
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12940,6 +12941,12 @@ MonoBehaviour:
     upgradetext: 
   weaponLevel: 0
   statsUpdate: 0
+  damage: {fileID: 0}
+  KnifeMove: {fileID: 0}
+  weaponRange: 0
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1134244241
 GameObject:
   m_ObjectHideFlags: 0
@@ -18014,7 +18021,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa55c7686d1ae94d964af91b2fb00ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   lifeTime: 5
+  destroyParent: 0
+  damageOverTime: 0
+  timeBetweenDamage: 0
 --- !u!1 &1327408529
 GameObject:
   m_ObjectHideFlags: 0
@@ -56077,7 +56088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1940721301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56350,7 +56361,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa55c7686d1ae94d964af91b2fb00ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   lifeTime: 5
+  destroyParent: 0
+  damageOverTime: 0
+  timeBetweenDamage: 0
 --- !u!114 &2063627351
 MonoBehaviour:
   m_ObjectHideFlags: 0

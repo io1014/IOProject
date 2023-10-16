@@ -29,5 +29,6 @@ public class UIController : MonoBehaviour
     public void exitLevel()
     {
         LevelUpPanel.SetActive(false);
+        Time.timeScale= 1.0f;
     }
 }

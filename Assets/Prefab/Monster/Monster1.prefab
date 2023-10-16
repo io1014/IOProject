@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2627687812376753440}
   - component: {fileID: 610838825913678019}
   - component: {fileID: -6671206965090760364}
+  - component: {fileID: 447420525119233933}
+  - component: {fileID: -8069868998978000232}
   m_Layer: 3
   m_Name: Monster1
   m_TagString: Monster
@@ -136,6 +138,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a3797e267ea8f469fe76cc143bc804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   exp: 5
   coin: 10
   Droprate: 0.5
+--- !u!114 &447420525119233933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031500105665348621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7b45bdccf7afb4bbe4a250c1f50d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &-8069868998978000232
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031500105665348621}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05e303b6b8b40d0469aa50e0a97977ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

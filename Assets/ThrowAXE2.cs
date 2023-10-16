@@ -43,6 +43,5 @@ public class ThrowAXE2 : Weapon
         damage.transform.localScale =Vector3.one * stats[weaponLevel].range;
 
         throwCounter = 0f;
-
     }
 }
