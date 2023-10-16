@@ -5,7 +5,7 @@ public class Experience : MonoBehaviour
 
     public int value { get { return expvalue; } set { expvalue = value; } }
     bool movingToPlayer;
-    float movespeed = 3;
+    float movespeed = 5;
     float timeCheck = 0.2f;
     float Checkcounter;
     PlayerController player;

@@ -55,7 +55,7 @@ public class RePosition : MonoBehaviour
             case "Monster":
                 if(coll.enabled)
                 {
-                    transform.Translate(playerDir * 40 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                    transform.Translate(playerDir * 40 + new Vector3(Random.Range(-6f, 6f), Random.Range(-6f, 6f), 0f));
                 }
                 break;
         }

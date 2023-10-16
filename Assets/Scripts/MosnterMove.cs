@@ -4,16 +4,16 @@ public class MosnterMove : MonoBehaviour
 {
     Rigidbody2D rb;
     SpriteRenderer SR;
-    public float speed =2;
+    public float speed;
     Transform Target;
     float damage = 5;
     float hitTIme = 1f;
     float hitCounter;
-    float health = 10;
+    [SerializeField]float health;
     bool islive = true;
     Animator ani;
     [SerializeField] int exp;
-    [SerializeField] int coin = 10;
+    [SerializeField] int coin = 40;
     [SerializeField] float Droprate = 0.5f;
     void Start()
     {
@@ -51,10 +51,13 @@ public class MosnterMove : MonoBehaviour
         health -= damage;
         if(health <=0)
         {
+            
             Destroy(gameObject);
             ExperienceController.instance.SpawnExp(transform.position, exp);
-           
-            if(Random.value <= Droprate) 
+            UIController.Instance.killcount = UIController.Instance.killcount + 1;
+
+
+            if (Random.value <= Droprate) 
             {
                 CoinController.instance.SpawnCoin(transform.position, coin);
             }

@@ -3,7 +3,7 @@ public class CoinController : MonoBehaviour
 {
     public static CoinController instance;
     [SerializeField] Coin coin;
-    public int Coin;
+    public int currentCoin;
     private void Awake()
     {
         if (instance == null)
@@ -18,7 +18,14 @@ public class CoinController : MonoBehaviour
 
     public void AddCoin(int CoinAdd)
     {
-        Coin += CoinAdd;
+        currentCoin += CoinAdd;
+        UIController.Instance.UpdateCoins();
+        SFXManager.instance.PlaySFXPitched(0);
+    }
+    public void SpendCoins(int coinsToSpend)
+    {
+        currentCoin -= coinsToSpend;
+
         UIController.Instance.UpdateCoins();
     }
 }

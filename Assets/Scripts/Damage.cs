@@ -3,12 +3,13 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public float damage = 1;
-    public float lifeTime = 100;
+    public float lifeTime;
 
     public bool destroyParent;
 
     public bool damageOverTime;
     public float timeBetweenDamage;
+    public bool destroyOnImpact;
 
     float damageCounter;
 
@@ -59,6 +60,11 @@ public class Damage : MonoBehaviour
             if (collision.CompareTag("Monster"))
             {
                 collision.GetComponent<MosnterMove>().TakeDamage(damage);
+
+                if(destroyOnImpact)
+                {
+                    Destroy(gameObject);
+                }
             }
         }else
         {

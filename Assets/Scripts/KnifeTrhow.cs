@@ -43,6 +43,7 @@ public class KnifeTrhow : Weapon
 
                     Instantiate(KnifeMove, KnifeMove.transform.position, KnifeMove.transform.rotation).gameObject.SetActive(true);
                 }
+                SFXManager.instance.PlaySFXPitched(2);
             }
         }
     }
@@ -56,5 +57,6 @@ public class KnifeTrhow : Weapon
         damage.lifeTime = stats[weaponLevel].duration;
         damage.transform.localScale = Vector3.one * stats[weaponLevel].range;
         shotCounter = 0f;
+        KnifeMove.moveSpeed = stats[weaponLevel].speed;
     }
 }

@@ -7,6 +7,7 @@ public class PlayerHealthController : MonoBehaviour
 {
     public static PlayerHealthController Instance;
     public float maxhealth , currenthealth;
+    [SerializeField] GameObject death;
     [SerializeField]
     Slider healthSlider;
     private void Awake()
@@ -25,6 +26,10 @@ public class PlayerHealthController : MonoBehaviour
     {
         healthSlider.maxValue = maxhealth;
         healthSlider.value = currenthealth;
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            currenthealth = 1;
+        }
     }
     public void UpdateBtn()
     {
@@ -39,7 +44,14 @@ public class PlayerHealthController : MonoBehaviour
         if(currenthealth <= 0)
         {
             gameObject.SetActive(false);
+            LevelManager.instance.End();
+            Instantiate(death, transform.position, transform.rotation);
+            Invoke("TimeStop", 1.5f);
         }
         healthSlider.value = currenthealth;
+    }
+    public void TimeStop()
+    {
+        Time.timeScale = 0f;
     }
 }

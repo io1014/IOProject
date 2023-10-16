@@ -26,10 +26,6 @@ public class PlayerStatController : MonoBehaviour
         {
             pickupRange.Add(new PlayerStatValue(pickupRange[i].cost + pickupRange[1].cost, pickupRange[i].value + (pickupRange[1].value - pickupRange[0].value)));
         }
-        for (int i = maxWeapons.Count - 1; i < maxWeaponsLevel; i++ )
-        {
-            maxWeapons.Add(new PlayerStatValue(maxWeapons[i].cost + maxWeapons[1].cost, maxWeapons[i].value + (maxWeapons[1].value - maxWeapons[0].value)));
-        }
     }
     void Update()
     {
@@ -40,33 +36,71 @@ public class PlayerStatController : MonoBehaviour
     }
     public void UpdateDisplay()
     {
+        if (moveSpeedLevel < moveSpeed.Count - 1)
+        {
+            UIController.Instance.moveSpeedUpgradeDisplay.UpdateDisplay(moveSpeed[moveSpeedLevel + 1].cost, moveSpeed[moveSpeedLevel].value, moveSpeed[moveSpeedLevel + 1].value);
+        }
+        else
+        {
+            UIController.Instance.moveSpeedUpgradeDisplay.ShowMaxLevel();
+        }
 
+        if (healthLevel < health.Count - 1)
+        {
+            UIController.Instance.healthUpgradeDisplay.UpdateDisplay(health[healthLevel + 1].cost, health[healthLevel].value, health[healthLevel + 1].value);
+        }
+        else
+        {
+            UIController.Instance.healthUpgradeDisplay.ShowMaxLevel();
+        }
+
+        if (pickupRangeLevel < pickupRange.Count - 1)
+        {
+            UIController.Instance.pickupRangeUpgradeDisplay.UpdateDisplay(pickupRange[pickupRangeLevel + 1].cost, pickupRange[pickupRangeLevel].value, pickupRange[pickupRangeLevel + 1].value);
+        }
+        else
+        {
+            UIController.Instance.pickupRangeUpgradeDisplay.ShowMaxLevel();
+        }
+
+        if (maxWeaponsLevel < maxWeapons.Count - 1)
+        {
+            UIController.Instance.maxWeaponsUpgradeDisplay.UpdateDisplay(maxWeapons[maxWeaponsLevel + 1].cost, maxWeapons[maxWeaponsLevel].value, maxWeapons[maxWeaponsLevel + 1].value);
+        }
+        else
+        {
+            UIController.Instance.maxWeaponsUpgradeDisplay.ShowMaxLevel();
+        }
     }
-
     public void Purchasehealth()
     {
         
         healthLevel++;
-        PlayerHealthController.Instance.currenthealth += 5;
+        CoinController.instance.SpendCoins(health[healthLevel].cost);
         UpdateDisplay();
-
         PlayerHealthController.Instance.maxhealth = health[healthLevel].value;
+        PlayerHealthController.Instance.currenthealth += health[healthLevel].value - health[healthLevel - 1].value;
     }
     public void Purchasespeed()
     {
+        moveSpeedLevel++;
+        CoinController.instance.SpendCoins(moveSpeed[moveSpeedLevel].cost);
         UpdateDisplay();
-
         PlayerController.instance.speed = moveSpeed[moveSpeedLevel].value;
     }
     public void PurchasepickupRange()
     {
+        pickupRangeLevel++;
+        CoinController.instance.SpendCoins(pickupRange[pickupRangeLevel].cost);
         UpdateDisplay();
-
         PlayerController.instance.range = pickupRange[pickupRangeLevel].value;
     }
     public void PurchasemaxWeapons()
     {
+        maxWeaponsLevel++;
+        CoinController.instance.SpendCoins(maxWeapons[maxWeaponsLevel].cost);
         UpdateDisplay();
+        PlayerController.instance.maxWeapon = Mathf.RoundToInt(maxWeapons[maxWeaponsLevel].value);
     }
 }
 [Serializable]

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PlayerStatUpgradeDisplay : MonoBehaviour
+public class UpdateDisplay : MonoBehaviour
 {
-   
-        public TMP_Text valueText, costText;
+    public TMP_Text valueText, costText;
 
-        public GameObject upgradeButton;
+    public GameObject upgradeButton;
 
-    public void UpdateDisplay(int cost, float oldValue, float newValue)
+    public void UpdateDisplays(int cost, float oldValue, float newValue)
     {
         valueText.text = "Value: " + oldValue.ToString("F1") + "->" + newValue.ToString("F1");
         costText.text = "Cost: " + cost;
@@ -26,10 +25,9 @@ public class PlayerStatUpgradeDisplay : MonoBehaviour
     }
 
     public void ShowMaxLevel()
-        {
-            valueText.text = "Max Level";
-            costText.text = "Max Level";
-            upgradeButton.SetActive(false);
-        }
+    {
+        valueText.text = "Max Level";
+        costText.text = "Max Level";
+        upgradeButton.SetActive(false);
     }
-
+}

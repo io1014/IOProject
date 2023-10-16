@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{AD99739E-AB86-473C-E3D5-867EC5889772}</ProjectGuid>
+    <ProjectGuid>{2124517E-ED5C-F9C9-F166-83D4A3206728}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,19 +58,24 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\DamageNumber.cs" />
     <Compile Include="Assets\Scripts\LevelUpButton.cs" />
+    <Compile Include="Assets\Scripts\SworldWeapon.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Knife.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
+    <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\RePosition.cs" />
     <Compile Include="Assets\Scripts\PlayerStatUpgradeDisplay.cs" />
     <Compile Include="Assets\Scripts\DamageNumberControll.cs" />
+    <Compile Include="Assets\Scripts\UpdateDisplay.cs" />
+    <Compile Include="Assets\Scripts\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Axe.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\KnifeMove.cs" />
+    <Compile Include="Assets\Scripts\KnifeMove.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\CoinController.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\ThrowWeapon.cs" />
-    <Compile Include="Assets\ThrowAXE2.cs" />
+    <Compile Include="Assets\Scripts\ThrowWeapon.cs" />
+    <Compile Include="Assets\Scripts\ThrowAXE2.cs" />
     <Compile Include="Assets\Scripts\Experience.cs" />
     <Compile Include="Assets\Scripts\MosnterMove.cs" />
     <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
@@ -84,13 +89,13 @@
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\ThrowAXE.cs" />
     <Compile Include="Assets\Scripts\BackGroundColor.cs" />
+    <Compile Include="Assets\Scripts\MonsterSpawner2.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
-    <Compile Include="Assets\ZoneWeapon.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
-    <Compile Include="Assets\PoolManager.cs" />
-    <Compile Include="Assets\Spawner.cs" />
+    <Compile Include="Assets\Scripts\SFXManager.cs" />
+    <Compile Include="Assets\Scripts\ZoneWeapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -110,7 +115,6 @@
     <None Include="Assets\Add Assets\UrbanNightSky\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\2d Free Pixel Art Realistic Crystals Pack\Documentation\2d Pixel Art Realistic Crystals Pack.txt" />
     <None Include="Assets\Add Assets\UI pack\Documentation.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Add Assets\Fonts\Kenney Fonts\License.txt" />

@@ -4,7 +4,7 @@ public class ExperienceController : MonoBehaviour
 {
     public static ExperienceController instance;
     [SerializeField] Experience experience;
-    int currentexperience;
+    public int currentexperience;
     public List<int> expLevels;
     int currentLevel = 1, maxLevel = 20;
     public List<Weapon> weaponsList;
@@ -24,10 +24,11 @@ public class ExperienceController : MonoBehaviour
         currentexperience += Exp;
         if (currentexperience >= expLevels[currentLevel])
         {
-            currentexperience = 0;
             LevelUp();
         }
         UIController.Instance.UpdateExperience(currentexperience, expLevels[currentLevel], currentLevel);
+
+        SFXManager.instance.PlaySFXPitched(0);
     }
     public void SpawnExp(Vector3 pos, int expvalue)
     {

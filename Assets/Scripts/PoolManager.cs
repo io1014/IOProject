@@ -5,13 +5,11 @@ using UnityEngine;
 public class PoolManager : MonoBehaviour
 {
     public GameObject[] prefabs;
-
     List<GameObject>[] pools;
     private void Awake()
     {
         pools = new List<GameObject>[prefabs.Length];
-
-        for ( int index = 0; index < pools.Length; index++)
+        for (int index = 0; index < pools.Length; index++)
         {
             pools[index] = new List<GameObject>();
         }
@@ -19,8 +17,7 @@ public class PoolManager : MonoBehaviour
     public GameObject Get(int index)
     {
         GameObject select = null;
-
-        foreach(GameObject item in pools[index])
+       foreach(GameObject item in pools[index])
         {
             if (!item.activeSelf)
             {
@@ -34,7 +31,6 @@ public class PoolManager : MonoBehaviour
             select = Instantiate(prefabs[index],transform);
             pools[index].Add(select);
         }
-
         return select;
     }
 }

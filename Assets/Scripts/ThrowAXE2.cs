@@ -30,7 +30,7 @@ public class ThrowAXE2 : Weapon
             {
                 Instantiate(damage,damage.transform.position,damage.transform.rotation).gameObject.SetActive(true);
             }
-
+            SFXManager.instance.PlaySFXPitched(1);
         }
         
     }

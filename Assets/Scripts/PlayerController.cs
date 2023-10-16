@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
     public float range;
     public Weapon weapon;
     public List<Weapon> MaxLevel = new List<Weapon>();
+    SpriteRenderer sr;
     private void Awake()
     {
         instance = this;
     }
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         speed = PlayerStatController.instance.moveSpeed[0].value;
         range = PlayerStatController.instance.pickupRange[0].value;
         AddRandomWeapon();     
@@ -27,6 +29,14 @@ public class PlayerController : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         inputvec.x = x;
         inputvec.y = y;
+        if(x>0)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr .flipX = false;
+        }
     }
     private void FixedUpdate()
     {
@@ -48,7 +58,7 @@ public class PlayerController : MonoBehaviour
         unassignedWeapon.Remove(weapon);
     }
 
-
+  
     public float Setrange { get { return range; } }
     
     public float SetSpeed { get { return speed; } }
